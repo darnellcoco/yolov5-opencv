@@ -9,7 +9,7 @@ def makexml(picPath, txtPath, xmlPath):  # txt所在文件夹路径，xml文件�
     在自己的标注图片文件夹下建三个子文件夹，分别命名为picture、txt、xml
     """
     dic = {
-        '0': "soccerball",  # 创建字典用来对类型进行转换
+        '0': "goal",  # 创建字典用来对类型进行转换
         # '1': "person",  # 此处的字典要与自己的classes.txt文件中的类对应，且顺序要一致
     }
     files = os.listdir(txtPath)
@@ -108,7 +108,7 @@ def makexml(picPath, txtPath, xmlPath):  # txt所在文件夹路径，xml文件�
 
 
 if __name__ == "__main__":
-    picPath = "F:/basketball-10.11/images/images-basketball/"  # 图片所在文件夹路径，后面的/一定要带上
-    txtPath = "F:/basketball-10.11/images/labels/"  # txt所在文件夹路径，后面的/一定要带上
-    xmlPath = "F:/basketball-10.11/images/xml/"  # xml文件保存路径，后面的/一定要带上
+    picPath = "C:/Users/lenovo/Desktop/goal/goal-img/"  # 图片所在文件夹路径，后面的/一定要带上
+    txtPath = "C:/Users/lenovo/Desktop/goal/goalLabel/"  # txt所在文件夹路径，后面的/一定要带上
+    xmlPath = "C:/Users/lenovo/Desktop/goal/goalLabelXML/"  # xml文件保存路径，后面的/一定要带上
     makexml(picPath, txtPath, xmlPath)
