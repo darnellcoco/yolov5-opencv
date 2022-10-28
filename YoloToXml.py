@@ -19,8 +19,18 @@ def makexml(picPath, txtPath, xmlPath):  # txt所在文件夹路径，xml文件�
         xmlBuilder.appendChild(annotation)
         txtFile = open(txtPath + name)
         txtList = txtFile.readlines()
-        img = cv2.imread(picPath + name[0:-4] + ".jpg")
+
+
+        # 注意！ 有时候图片结尾可能不是jpg
+        pp = picPath + name[0:-4] + ".jpg"
+        if os.path.exists(pp):
+            img = cv2.imread(picPath + name[0:-4] + ".jpg")
+        else:
+            img = cv2.imread(picPath + name[0:-4] + ".jpeg")
         Pheight, Pwidth, Pdepth = img.shape
+
+
+
 
         folder = xmlBuilder.createElement("folder")  # folder标签
         foldercontent = xmlBuilder.createTextNode("driving_annotation_dataset")
@@ -108,7 +118,7 @@ def makexml(picPath, txtPath, xmlPath):  # txt所在文件夹路径，xml文件�
 
 
 if __name__ == "__main__":
-    picPath = "C:/Users/lenovo/Desktop/goal/goal-img/"  # 图片所在文件夹路径，后面的/一定要带上
-    txtPath = "C:/Users/lenovo/Desktop/goal/goalLabel/"  # txt所在文件夹路径，后面的/一定要带上
-    xmlPath = "C:/Users/lenovo/Desktop/goal/goalLabelXML/"  # xml文件保存路径，后面的/一定要带上
+    picPath = "C:/Users/lenovo/Desktop/ball/ballimg/"  # 图片所在文件夹路径，后面的/一定要带上
+    txtPath = "C:/Users/lenovo/Desktop/ball/goalLabel/"  # txt所在文件夹路径，后面的/一定要带上
+    xmlPath = "C:/Users/lenovo/Desktop/ball/goalLabelXML/"  # xml文件保存路径，后面的/一定要带上
     makexml(picPath, txtPath, xmlPath)
