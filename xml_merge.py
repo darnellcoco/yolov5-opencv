@@ -2,9 +2,11 @@ from xml.etree.ElementTree import ElementTree, Element, parse
 import xml.etree.ElementTree as ET
 import os
 import shutil
-hole_path = './Annotations'
-arm_path = './Anno'
-out_path = './Fusing'
+
+from sympy import primefactors
+hole_path = "C:/Users/lenovo/Desktop/goal/goalLabelXML/"
+arm_path = "C:/Users/lenovo/Desktop/goal/soccerLabelXML/"
+out_path = "C:/Users/lenovo/Desktop/goal/mergedLabelXML/"
 # 格式化
 def __indent(elem, level=0):
     i = "\n" + level*"\t"
@@ -37,7 +39,8 @@ for hole_xml in os.listdir(hole_path):
     # 不同名xml复制
     else:
         print('copying',hole_xml)
-        shutil.copy(os.path.join(hole_path,hole_xml), out_path)
+        p = os.path.join(hole_path,hole_xml)
+        shutil.copy(p, out_path)
 # 将不同名xml复制
 for arm_xml in os.listdir(arm_path):
     if not os.path.exists(os.path.join(out_path,arm_xml)):
