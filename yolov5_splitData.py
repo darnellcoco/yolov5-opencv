@@ -6,10 +6,10 @@ from os.path import join
 import random
 from shutil import copyfile
 
-classes = ['soccerball']
+classes = ['soccerball', 'goal']
 # classes=["ball"]
 
-TRAIN_RATIO = 70
+TRAIN_RATIO = 75
 
 
 def clear_hidden_files(path):

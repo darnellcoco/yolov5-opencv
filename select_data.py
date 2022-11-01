@@ -7,10 +7,11 @@ imgpath = "C:\\Users\\lenovo\\Desktop\\ball\\img\\"
 labelpath = 'C:\\Users\\lenovo\\Desktop\\ball\\label\\'
 
 cv.namedWindow('output', cv.WINDOW_NORMAL)
-
+count = 0
 for root, dirs, files in os.walk(imgpath):
     for file in files:
         if file is not None:
+            count += 1
             path = imgpath + file
             im = cv.imread(path, 1)
             cv.imshow('output', im)
@@ -19,7 +20,7 @@ for root, dirs, files in os.walk(imgpath):
             if k == 115: # 键盘s
                 os.remove(path)
                 path2 = labelpath + '.'.join(file.split('.')[0:-1]) + '.txt'
-                print(path2)
+                print(count)
                 if os.path.exists(path2):
                     os.remove(path2)
                     print(path2 + ' has been removed')

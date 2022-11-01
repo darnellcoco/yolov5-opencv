@@ -4,9 +4,9 @@ import os
 import shutil
 
 from sympy import primefactors
-hole_path = "C:/Users/lenovo/Desktop/goal/goalLabelXML/"
-arm_path = "C:/Users/lenovo/Desktop/goal/soccerLabelXML/"
-out_path = "C:/Users/lenovo/Desktop/goal/mergedLabelXML/"
+hole_path = "C:/Users/lenovo/Desktop/ball/goalLabelXML/"
+arm_path = "C:/Users/lenovo/Desktop/ball/ballLabelXML/"
+out_path = "C:/Users/lenovo/Desktop/ball/mergedLabelXML/"
 # 格式化
 def __indent(elem, level=0):
     i = "\n" + level*"\t"
